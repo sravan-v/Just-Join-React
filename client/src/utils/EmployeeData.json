@@ -1,0 +1,117 @@
+[
+  {
+    "gender": [
+      { "key": "male", "text": "Male", "value": "Male" },
+      { "key": "female", "text": "Female", "value": "Female" },
+      { "key": "other", "text": "Other", "value": "Other" }
+    ]
+  },
+
+  {
+    "organization": [
+      { "key": "school", "text": "School", "value": "School" },
+      { "key": "college", "text": "College", "value": "College" },
+      { "key": "hospital", "text": "Hospital", "value": "Hospital" },
+      { "key": "superMarket", "text": "Super Market", "value": "Super Market" },
+      { "key": "malls", "text": "Malls", "value": "Malls" },
+      { "key": "others", "text": "Others", "value": "Others" }
+    ]
+  },
+
+  {
+    "schools": [
+      { "key": "teacher", "text": "Teacher", "value": "Teacher" },
+      { "key": "accountant", "text": "Accountant", "value": "Accountant" },
+      {
+        "key": "administrative-staff",
+        "text": "Administrative Staff",
+        "value": "Administrative Staff"
+      },
+      {
+        "key": "front office staff",
+        "text": "Front Office Staff",
+        "value": "Front Office Staff"
+      },
+      { "key": "driver", "text": "Driver", "value": "Driver" },
+      { "key": "sweeper", "text": "Sweeper", "value": "Sweeper" },
+      { "key": "watchman", "text": "Watchman", "value": "Watchman" }
+    ]
+  },
+
+  {
+    "colleges": [
+      { "key": "lecturer", "text": "Lecturer", "value": "Lecturer" },
+      { "key": "accountant", "text": "Accountant", "value": "Accountant" },
+      {
+        "key": "administrative-staff",
+        "text": "Administrative Staff",
+        "value": "administrative staff"
+      },
+      {
+        "key": "front office staff",
+        "text": "Front Office Staff",
+        "value": "Front Office Staff"
+      },
+      { "key": "driver", "text": "Driver", "value": "driver" },
+      { "key": "sweeper", "text": "Sweeper", "value": "Sweeper" },
+      { "key": "watchman", "text": "Watchman", "value": "Watchman" }
+    ]
+  },
+
+  {
+    "hospitals": [
+      { "key": "nurse", "text": "Nurse", "value": "Nurse" },
+      {
+        "key": "lab-technician",
+        "text": "Lab Technician",
+        "value": "Lab Technician"
+      },
+      {
+        "key": "xray-technician",
+        "text": "X-Ray Technician",
+        "value": "X-Ray Technician"
+      },
+      {
+        "key": "front office staff",
+        "text": "Front Office Staff",
+        "value": "Front Office Staff"
+      },
+      { "key": "accountant", "text": "Accountant", "value": "Accountants" },
+      { "key": "security", "text": "Security Guard", "value": "Security Guard" },
+      { "key": "sweeper", "text": "Sweeper", "value": "Sweeper" },
+      { "key": "watchman", "text": "Watchman", "value": "Watchman" }
+    ]
+  },
+
+  {
+    "superMarkets": [
+      {
+        "key": "sales-person",
+        "text": "Sales Person",
+        "value": "Sales Person"
+      },
+      { "key": "cashiers", "text": "Cashier", "value": "Cashier" },
+      { "key": "accountant", "text": "Accountant", "value": "Accountant" },
+      { "key": "security", "text": "Security Guard", "value": "Security Guard" },
+      { "key": "sweeper", "text": "Sweeper", "value": "Sweeper" }
+    ]
+  },
+
+  {
+    "malls": [
+      {
+        "key": "sales-person",
+        "text": "Sales Person",
+        "value": "Sales Person"
+      },
+      { "key": "supervisor", "text": "Supervisor", "value": "Supervisor" },
+      {
+        "key": "assistant-manager",
+        "text": "Assistant Manager",
+        "value": "Assistant Manager"
+      },
+      { "key": "security", "text": "Security Guards", "value": "Security Guard" },
+      { "key": "sweepers", "text": "Sweepers", "value": "Sweeper" }
+    ]
+  }
+]

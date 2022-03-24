@@ -1,0 +1,54 @@
+body {
+  font-family: "Adobe Clean",-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #000000 !important;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Adobe Clean';
+  src:url('assets/fonts/AdobeClean-Light.woff2') format('woff2'),
+     url('assets/fonts/AdobeClean-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Adobe Clean';
+  src:url('assets/fonts/AdobeClean-Regular.woff2') format('woff2'),
+     url('assets/fonts/AdobeClean-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Adobe Clean';
+  src:url('assets/fonts/AdobeClean-BoldSemiCn.woff2') format('woff2'),
+     url('assets/fonts/AdobeClean-BoldSemiCn.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Adobe Clean';
+  src:url('assets/fonts/AdobeClean-Black.woff2') format('woff2'),
+     url('assets/fonts/AdobeClean-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Adobe Clean';
+  src:url('assets/fonts/AdobeClean-Bold.woff2') format('woff2'),
+     url('assets/fonts/AdobeClean-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
