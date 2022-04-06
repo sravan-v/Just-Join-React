@@ -6,6 +6,24 @@
       { "key": "other", "text": "Other", "value": "Other" }
     ]
   },
+  {
+    "reached": [
+      { "key": "yes", "text": "Yes", "value": "Yes" },
+      { "key": "no", "text": "No", "value": "No" }
+    ]
+  },
+  {
+    "paid": [
+      { "key": "yes", "text": "Yes", "value": "Yes" },
+      { "key": "no", "text": "No", "value": "No" }
+    ]
+  },
+  {
+    "employee_status": [
+      { "key": "progress", "text": "Progress", "value": "Progress" },
+      { "key": "complete", "text": "Complete", "value": "Complete" }
+    ]
+  },
 
   {
     "organization": [

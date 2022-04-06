@@ -4,7 +4,11 @@ const EmployeeModel = require("../models/employee.model");
 exports.getEmployeeList = (req, res) => {
   EmployeeModel.getAllEmployees((err, employees) => {
     if (err) res.send(err);
-    res.send(employees);
+    res.send({
+      status: 200,
+      message: "Retrieved data successfully!",
+      data: employees,
+    });
   });
 };
 
@@ -12,14 +16,18 @@ exports.getEmployeeList = (req, res) => {
 exports.getEmployeeById = (req, res) => {
   EmployeeModel.getEmployeeById(req.params.id, (err, employee) => {
     if (err) res.send(err);
-    res.send(employee);
+    res.send({
+      status: 200,
+      message: "Retrieved data successfully!",
+      data: employee,
+    });
   });
 };
 
 // create new employee
 exports.createEmployee = (req, res) => {
   const employeeReqBody = new EmployeeModel(req.body);
-
+  console.log("Sent Data ", employeeReqBody);
   // check null/empty data
   if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
     res.send(400).send({ success: false, message: "Please fill all fields" });
@@ -27,7 +35,7 @@ exports.createEmployee = (req, res) => {
     EmployeeModel.createNewEmployee(employeeReqBody, (err, employee) => {
       if (err) res.send(err);
       res.json({
-        status: true,
+        status: 200,
         message: "New Employee Created Successfully",
         data: employee,
       });
@@ -38,7 +46,7 @@ exports.createEmployee = (req, res) => {
 // update employee
 exports.updateEmployee = (req, res) => {
   const employeeReqBody = new EmployeeModel(req.body);
-
+  console.log("Updated Data ", req.body);
   // check null/empty data
   if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
     res.send(400).send({ success: false, message: "Please fill all fields" });

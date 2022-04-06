@@ -5,15 +5,16 @@ import { Colors } from "../../values/Colors";
 
 const StyledButton = styled(Button)`
   font-size: 16px !important;
-  color: #ffffff !important;
-  background-color: ${Colors.primary} !important;
-  transition: all ease 0.5s;
+  color: ${(props) => (props.active ? "#ffffff" : "#303030")} !important;
+  background-color: ${(props) =>
+    props.active ? Colors.primary : "#c3c3c3"} !important;
 `;
 
-export const SubmitButton = () => {
+export const SubmitButton = (props) => {
+  const { text, active } = props;
   return (
-    <StyledButton fluid type="submit">
-      Submit
+    <StyledButton active={active} fluid>
+      {text}
     </StyledButton>
   );
 };

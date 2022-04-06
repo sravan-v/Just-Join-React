@@ -13,20 +13,21 @@ var Employee = function (employee) {
   this.organization = employee.organization;
   this.job_type = employee.job_type;
   this.job_exp = employee.job_exp;
-  this.present_or_previous_company = employee.present_or_previous_company;
+  this.present_company = employee.present_company;
   this.present_salary = employee.present_salary;
   this.expected_salary = employee.expected_salary;
-  this.date_of_registered = new Date().toLocaleDateString("en-US");
-  this.employee_status = "Progress";
-  this.reached = "Reached";
-  this.paid = "Paid";
-  this.employee_comment = "";
-  this.read_record = 0;
+  this.employee_status = employee.employee_status;
+  this.reached = employee.reached;
+  this.paid = employee.paid;
+  this.employee_comment = employee.employee_comment;
+  this.read_record = employee.read_record;
+  this.is_deleted = employee.is_deleted;
+  this.last_updated = employee.last_updated;
 };
 
 // get all employees
 Employee.getAllEmployees = (result) => {
-  dbConn.query("SELECT * FROM employee", (err, res) => {
+  dbConn.query("SELECT * FROM employee WHERE is_deleted = 0", (err, res) => {
     if (err) {
       result(null, err);
     } else {
@@ -46,7 +47,7 @@ Employee.getEmployeeById = (id, result) => {
   });
 };
 
-// creaet new employee
+// create new employee
 Employee.createNewEmployee = (employeeReqBody, result) => {
   dbConn.query("INSERT INTO employee SET ? ", employeeReqBody, (err, res) => {
     if (err) {
@@ -57,26 +58,31 @@ Employee.createNewEmployee = (employeeReqBody, result) => {
   });
 };
 
-// uppdate employee
+// update employee
 Employee.updateNewEmployee = (id, employeeReqBody, result) => {
   dbConn.query(
-    "UPDATE employee SET job_name = ?, first_name = ?, last_name = ?, father_name = ?, dob = ?, gender = ?, address = ?, phone_number = ?, aadhar = ?, organization = ?, job_type = ?, job_exp = ?, present_or_previous_company = ?, present_salary = ?, expected_salary = ? WHERE id = ?",
+    "UPDATE employee SET first_name = ?, last_name = ?, father_name = ?, gender = ?, dob = ?, phone_number = ?, aadhar = ?, address = ?, job_name = ?, organization = ?, job_type = ?, job_exp = ?, present_company = ?, present_salary = ?, expected_salary = ?, reached = ?, paid = ?, employee_status = ?, employee_comment = ?, last_updated = ? WHERE id = ?",
     [
-      employeeReqBody.job_name,
       employeeReqBody.first_name,
       employeeReqBody.last_name,
       employeeReqBody.father_name,
-      employeeReqBody.dob,
       employeeReqBody.gender,
-      employeeReqBody.address,
+      employeeReqBody.dob,
       employeeReqBody.phone_number,
       employeeReqBody.aadhar,
+      employeeReqBody.address,
+      employeeReqBody.job_name,
       employeeReqBody.organization,
       employeeReqBody.job_type,
       employeeReqBody.job_exp,
-      employeeReqBody.present_or_previous_company,
+      employeeReqBody.present_company,
       employeeReqBody.present_salary,
       employeeReqBody.expected_salary,
+      employeeReqBody.reached,
+      employeeReqBody.paid,
+      employeeReqBody.employee_status,
+      employeeReqBody.employee_comment,
+      employeeReqBody.last_updated,
       id,
     ],
     (err, res) => {
@@ -89,15 +95,19 @@ Employee.updateNewEmployee = (id, employeeReqBody, result) => {
   );
 };
 
-// get employee by id
+// delete employee by id
 Employee.deleteEmployee = (id, result) => {
-  dbConn.query("DELETE FROM employee WHERE id=?", id, (err, res) => {
-    if (err) {
-      result(null, err);
-    } else {
-      result(null, res);
+  dbConn.query(
+    "UPDATE employee SET is_deleted = 1 WHERE id = ?",
+    id,
+    (err, res) => {
+      if (err) {
+        result(null, err);
+      } else {
+        result(null, res);
+      }
     }
-  });
+  );
 };
 
 module.exports = Employee;
